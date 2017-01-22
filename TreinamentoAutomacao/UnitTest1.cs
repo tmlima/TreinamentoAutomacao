@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Drawing.Imaging;
+using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace TreinamentoAutomacao
 {
@@ -21,6 +23,12 @@ namespace TreinamentoAutomacao
             driver = new ChromeDriver();
         }
 
+        [TestCleanup]
+        public void Cleanup()
+        {
+            driver.Close();
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -33,6 +41,10 @@ namespace TreinamentoAutomacao
 
             log.Write( "Clicking enter" );
             searchField.SendKeys( Keys.Enter );
+
+            WebDriverWait wait = new WebDriverWait( driver, TimeSpan.FromSeconds( 5 ) );
+            IWebElement resultStatus = wait.Until( x => x.FindElement( By.Id( "resultStats" ) ) );
+            Assert.IsTrue( resultStatus.Text.Contains( "resultados" ) );
 
             log.Write( "Taking screenshot" );
             Screenshot googleResults = driver.GetScreenshot();
