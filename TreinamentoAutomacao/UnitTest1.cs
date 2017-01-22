@@ -9,14 +9,21 @@ namespace TreinamentoAutomacao
     [TestClass]
     public class UnitTest1
     {
+        private const string EvidencesDirectory = "C:\\Evidences\\";
+        private ChromeDriver driver;
+        private Log log;
+
+        [ TestInitialize]
+        public void Initialize()
+        {
+            string logFileName = "Test_" + GetTimestamp();
+            log = new Log( EvidencesDirectory, logFileName );
+            driver = new ChromeDriver();
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
-            const string EvidencesDirectory = "C:\\Evidences\\";
-            string logFileName = "Test_" + GetTimestamp();
-            Log log = new Log( EvidencesDirectory, logFileName );
-            ChromeDriver driver = new ChromeDriver();
-
             log.Write( "Going to http://google.com" );
             driver.Url = "http://google.com";
 
