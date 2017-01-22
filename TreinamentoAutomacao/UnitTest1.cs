@@ -35,7 +35,9 @@ namespace TreinamentoAutomacao
             log.Write( "Going to http://google.com" );
             driver.Url = "http://google.com";
 
-            IWebElement searchField = driver.FindElementById( "lst-ib" );
+            //IWebElement searchField = driver.FindElementById( "lst-ib" );
+            IWebElement searchField = driver.FindElementByXPath( "//input[@id='lst-ib']" );
+
             log.Write( "Writing searchText" );
             searchField.SendKeys( "Automation" );
 
