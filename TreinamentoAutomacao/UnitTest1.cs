@@ -30,7 +30,7 @@ namespace TreinamentoAutomacao
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void VerifySearchResults()
         {
             log.Write( "Going to http://google.com" );
             driver.Url = "http://google.com";
@@ -49,6 +49,19 @@ namespace TreinamentoAutomacao
             log.Write( "Taking screenshot" );
             Screenshot googleResults = driver.GetScreenshot();
             googleResults.SaveAsFile( EvidencesDirectory + GetTimestamp() + ".jpeg", ImageFormat.Jpeg );
+            log.Save();
+        }
+
+        [TestMethod]
+        public void GoogleSearchIsAlive()
+        {
+            log.Write( "Going to http://google.com" );
+            driver.Url = "http://google.com";
+
+            log.Write( "Taking screenshot" );
+            Screenshot googleResults = driver.GetScreenshot();
+            googleResults.SaveAsFile( EvidencesDirectory + GetTimestamp() + ".jpeg", ImageFormat.Jpeg );
+            Assert.IsNotNull( driver.FindElementById( "lst-ib" ) );
             log.Save();
         }
 
