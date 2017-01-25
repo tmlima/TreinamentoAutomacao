@@ -52,7 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\SpanPageComponent.cs" />
+    <Compile Include="Components\SpanComponent.cs" />
     <Compile Include="Components\TextBoxComponent.cs" />
     <Compile Include="Pages\GooglePage.cs" />
     <Compile Include="Pages\ResultsPage.cs" />

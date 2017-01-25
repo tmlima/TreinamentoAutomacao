@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace TreinamentoAutomacao.Automation.Components
 {
-    public class SpanPageComponent
+    public class SpanComponent
     {
         private IWebElement element;
 
-        public SpanPageComponent(IWebElement element)
+        public SpanComponent(IWebElement element)
         {
             this.element = element;
         }

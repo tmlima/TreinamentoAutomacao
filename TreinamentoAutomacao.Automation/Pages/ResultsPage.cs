@@ -15,7 +15,7 @@ namespace TreinamentoAutomacao.Automation.Pages
 
         private IWebDriver webDriver;
 
-        private SpanPageComponent resultStatus { get { return new SpanPageComponent( webDriver.FindElement( By.Id( SpanResultStatusId ) ) ); } }
+        private SpanComponent resultStatus { get { return new SpanComponent( webDriver.FindElement( By.Id( SpanResultStatusId ) ) ); } }
 
         public ResultsPage( IWebDriver webDriver )
         {
