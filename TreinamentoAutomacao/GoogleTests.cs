@@ -17,6 +17,13 @@ namespace TreinamentoAutomacao
         private Log log;
         private GoogleWorkflow googleWorkflow;
 
+        private TestContext testContextInstance;
+        public TestContext TestContext
+        {
+            get { return testContextInstance; }
+            set { testContextInstance = value; }
+        }
+
         [ TestInitialize]
         public void Initialize()
         {
@@ -33,9 +40,12 @@ namespace TreinamentoAutomacao
         }
 
         [TestMethod]
+        [DataSource( "Microsoft.VisualStudio.TestTools.DataSource.CSV", "C:\\TestData\\", "googletest#csv", DataAccessMethod.Sequential )]
         public void VerifySearchResults()
         {
-            googleWorkflow.Search( "Automation" );
+            string searchText = TestContext.DataRow[ "SearchText" ].ToString();
+
+            googleWorkflow.Search( searchText );
             googleWorkflow.VerifyIfAnyResultWasFound();
         }
 
