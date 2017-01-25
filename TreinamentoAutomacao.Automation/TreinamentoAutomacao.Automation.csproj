@@ -52,8 +52,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PageObjects\SpanPageObject.cs" />
-    <Compile Include="PageObjects\TextBoxPageObject.cs" />
+    <Compile Include="Components\SpanPageComponent.cs" />
+    <Compile Include="Components\TextBoxComponent.cs" />
     <Compile Include="Pages\GooglePage.cs" />
     <Compile Include="Pages\ResultsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

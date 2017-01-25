@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TreinamentoAutomacao.Automation.PageObjects;
+using TreinamentoAutomacao.Automation.Components;
 
 namespace TreinamentoAutomacao.Automation.Pages
 {
@@ -14,7 +14,7 @@ namespace TreinamentoAutomacao.Automation.Pages
 
         private IWebDriver webDriver;
 
-        private TextBoxPageObject searchBox { get { return new TextBoxPageObject( webDriver.FindElement( By.Id( TextBoxSearchId ) ) ); } }
+        private TextBoxPageComponent searchBox { get { return new TextBoxPageComponent( webDriver.FindElement( By.Id( TextBoxSearchId ) ) ); } }
 
         public GooglePage(IWebDriver webDriver)
         {

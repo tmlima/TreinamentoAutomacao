@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TreinamentoAutomacao.Automation.PageObjects;
+using TreinamentoAutomacao.Automation.Components;
 
 namespace TreinamentoAutomacao.Automation.Pages
 {
@@ -15,7 +15,7 @@ namespace TreinamentoAutomacao.Automation.Pages
 
         private IWebDriver webDriver;
 
-        private SpanPageObject resultStatus { get { return new SpanPageObject( webDriver.FindElement( By.Id( SpanResultStatusId ) ) ); } }
+        private SpanPageComponent resultStatus { get { return new SpanPageComponent( webDriver.FindElement( By.Id( SpanResultStatusId ) ) ); } }
 
         public ResultsPage( IWebDriver webDriver )
         {

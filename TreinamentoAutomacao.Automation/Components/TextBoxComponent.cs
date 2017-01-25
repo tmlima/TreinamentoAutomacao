@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreinamentoAutomacao.Automation.PageObjects
+namespace TreinamentoAutomacao.Automation.Components
 {
-    public class SpanPageObject
+    public class TextBoxPageComponent
     {
         private IWebElement element;
 
-        public SpanPageObject(IWebElement element)
+        public TextBoxPageComponent(IWebElement element)
         {
             this.element = element;
         }
 
-        public string GetText()
+        public void Fill(string text)
         {
-            return element.Text;
+            element.SendKeys( text );
         }
     }
 }
