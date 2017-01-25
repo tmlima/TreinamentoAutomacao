@@ -14,7 +14,7 @@ namespace TreinamentoAutomacao.Automation.Pages
 
         private IWebDriver webDriver;
 
-        private TextBoxPageComponent searchBox { get { return new TextBoxPageComponent( webDriver.FindElement( By.Id( TextBoxSearchId ) ) ); } }
+        private TextBoxComponent searchBox { get { return new TextBoxComponent( webDriver.FindElement( By.Id( TextBoxSearchId ) ) ); } }
 
         public GooglePage(IWebDriver webDriver)
         {

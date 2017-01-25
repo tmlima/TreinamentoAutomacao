@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace TreinamentoAutomacao.Automation.Components
 {
-    public class TextBoxPageComponent
+    public class TextBoxComponent
     {
         private IWebElement element;
 
-        public TextBoxPageComponent(IWebElement element)
+        public TextBoxComponent(IWebElement element)
         {
             this.element = element;
         }
